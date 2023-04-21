@@ -1,5 +1,8 @@
 apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
+//--Icons-----------
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+//--Icons-----------
 
 import com.android.build.OutputFile
 
