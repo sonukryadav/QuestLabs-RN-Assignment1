@@ -1,1 +1,1 @@
-# QuestLabsReactNativeAssignment1
+# QuestLabsRNAssignment1
