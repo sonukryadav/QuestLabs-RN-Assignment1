@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import TabNavigation from './components/navigation/TabNavigation';
+import BottomTabNavigation from './components/navigation/BottomTabNavigation';
 
 export default function App() {
   return (
     <NavigationContainer>
-      <TabNavigation />
+      <BottomTabNavigation />
     </NavigationContainer>
   )
 }
