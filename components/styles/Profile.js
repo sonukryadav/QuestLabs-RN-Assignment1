@@ -7,9 +7,9 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         backgroundColor:"#F5F5F5",
     },
+    // User profile card - upper half
     scrollView: {
-        // borderWidth: 3,
-        // borderColor:"red"
+
     },
     cardTopView: {
         flexDirection: "row",
@@ -19,13 +19,11 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 25,
         borderBottomRightRadius: 25,
         elevation: 8,
-        marginBottom:10
+        marginBottom:20,
     },
     girlView: {
         flex: 1,
-        // borderWidth: 2,
         borderColor: "teal",
-        // justifyContent: "center",
         alignItems:"center"
     },
     girlImage: {
@@ -59,6 +57,7 @@ const styles = StyleSheet.create({
         color: "black",
         fontSize: 14,
         fontWeight: 500,
+        padding:8
     },
     cardBottomView: {
         flexDirection: "row",
@@ -71,7 +70,6 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     badgesText: {
-        color: "red",
         textAlign:"center",
     },
     separatorView: {
@@ -87,7 +85,6 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     membershipText: {
-        color: "red",
         textAlign: "center",
     },
     girlRightView: {

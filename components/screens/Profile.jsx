@@ -1,11 +1,15 @@
-import { View, Text, SafeAreaView, ScrollView, Image, TouchableOpacity} from 'react-native';
-import React from 'react';
+import { View, Text, SafeAreaView, ScrollView, Image, TouchableOpacity, ImageBackground } from 'react-native';
+import React, { useState} from 'react';
 import styles from '../styles/Profile';
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { images } from "../../assets/images";
+import { badgesImages } from "../../assets/images";
+import { LockedBadges, UnlockedBadges } from "../subComponets";
+import { useNavigation} from "@react-navigation/native";
 
 
 const UserLevel = ({ iconName, title}) => {
+
     return (
         <>
             <View style={styles.item1}>
@@ -17,10 +21,15 @@ const UserLevel = ({ iconName, title}) => {
 }
 
 
-export default function Profile() {
+export default function Profile({ state, navigation }) {
+    const moveTo = (where) => {
+        navigation.navigate(where);
+        console.log(where);
+    }
     return (
         <SafeAreaView style={styles.safeAreaView}>
             <ScrollView contentContainerStyle={styles.scrollView}>
+                {/* User profile card - upper half */}
                 <View style={styles.cardTopView}>
                     <View style={styles.girlView}>
                         <Image source={images.girl} resizeMode='contain' style={styles.girlImage} />
@@ -32,16 +41,16 @@ export default function Profile() {
                         </View>
                         <View style={styles.cardBottomView}>
                             <View style={styles.badgesView}>
-                                <TouchableOpacity>
-                                    <Text style={styles.badgesText}>{"BADGES"}</Text>
+                                <TouchableOpacity onPress={() => moveTo("Badges")}>
+                                    <Text style={[styles.badgesText, {color: state.index==0 ? "red" : "grey"}]}>{"BADGES"}</Text>
                                 </TouchableOpacity>
                             </View>
                             <View style={styles.separatorView}>
                                 <Text style={styles.separatorText}>{" | "}</Text>
                             </View>
                             <View style={styles.membershipView}>
-                                <TouchableOpacity>
-                                    <Text style={styles.membershipText}>{"MEMBERSHIP CARD"}</Text>
+                                <TouchableOpacity onPress={() => moveTo("MembershipCard")}>
+                                    <Text style={[styles.membershipText, { color: state.index == 1 ? "red" : "grey" }]}>{"MEMBERSHIP CARD"}</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>
